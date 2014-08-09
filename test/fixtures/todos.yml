@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  received_at: 2014-08-03 14:30:57
+  priority: 1
+  description: MyText
+  deadline_at: 2014-08-03 14:30:57
+  done: false
+  forwarded_to: MyString
+  reason_of_delay: MyText
+  new_deadline_at: 2014-08-03 14:30:57
+
+two:
+  received_at: 2014-08-03 14:30:57
+  priority: 1
+  description: MyText
+  deadline_at: 2014-08-03 14:30:57
+  done: false
+  forwarded_to: MyString
+  reason_of_delay: MyText
+  new_deadline_at: 2014-08-03 14:30:57

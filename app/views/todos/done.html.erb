@@ -1,0 +1,36 @@
+<h1>Listing Done ToDos</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Received at</th>
+    <th>Priority</th>
+    <th>Description</th>
+    <th>Deadline at</th>
+    <th>Done</th>
+    <th>Forwarded to</th>
+    <th>Appointment delay in days</th>
+    <th>Reason of delay</th>
+    <th>New deadline at</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @todos.each do |todo| %>
+      <tr>
+        <td><%= todo.received_at %></td>
+        <td><%= todo.priority %></td>
+        <td><%= todo.description %></td>
+        <td><%= todo.deadline_at %></td>
+        <td><%= todo.done %></td>
+        <td><%= todo.forwarded_to %></td>
+        <td><%= todo.appointment_delay if todo.appointment_delay > 0 %></td>
+        <td><%= todo.reason_of_delay %></td>
+        <td><%= todo.new_deadline_at %></td>
+        <td><%= link_to 'Show', todo %></td>
+        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+    </table>

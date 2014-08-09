@@ -1,0 +1,49 @@
+<%= form_for(@todo) do |f| %>
+  <% if @todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+      <% @todo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :received_at %><br>
+    <%= f.datetime_select :received_at %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br>
+    <%= f.number_field :priority %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :deadline_at %><br>
+    <%= f.datetime_select :deadline_at %>
+  </div>
+  <div class="field">
+    <%= f.label :done %><br>
+    <%= f.check_box :done %>
+  </div>
+  <div class="field">
+    <%= f.label :forwarded_to %><br>
+    <%= f.text_field :forwarded_to %>
+  </div>
+  <div class="field">
+    <%= f.label :reason_of_delay %><br>
+    <%= f.text_area :reason_of_delay %>
+  </div>
+  <div class="field">
+    <%= f.label :new_deadline_at %><br>
+    <%= f.datetime_select :new_deadline_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
